@@ -50,7 +50,7 @@ public class PostController {
         return postService.getTopPosts();
     }
 
-    @CacheEvict(value = "post-top", allEntries = true)
+    @CacheEvict(value = "post-top")
     @GetMapping("/top/evict")
     public void evictTopPosts() {
         log.info("Evict post-top");
